@@ -31,21 +31,17 @@
                       </thead>
                       <tbody>
                           @foreach ($AllDatas as $key => $AllData)
-                              
-                          @endforeach
-                           <tr>
+                          <tr>
                               <td>{{$key+1}} </td>
                               <td>{{$AllData->usertype}} </td>
                               <td>{{$AllData->name}} </td>
                               <td>{{$AllData->email}} </td>
                               <td>
-                                  <a href="#" class="btn btn-sm btn-info">Edit</a>
-                                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                                  
-                            </td>
-                              
-                              
+                                <a href="{{route('user.edit',$AllData->id)}} " class="btn btn-sm btn-info">Edit</a>
+                                <a href="{{route('user.delete',$AllData->id)}}" class="btn btn-sm btn-danger" confirm(Are You Sure) >Delete</a>
+                                </td>
                           </tr>
+                          @endforeach
                       </tbody>				  
                       
                   </table>
