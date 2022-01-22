@@ -8,7 +8,7 @@
 <!-- Basic Forms -->
  <div class="box">
    <div class="box-header with-border">
-	 <h4 class="box-title">Form Validation</h4>
+	 <h4 class="box-title">Edit User</h4>
 	 
    </div>
    <!-- /.box-header -->
