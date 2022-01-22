@@ -27,6 +27,10 @@ class UserFactory extends Factory
         return [
             'name' => 'Mahbub',
             'email' => 'mahbub@gmail.com',
+            'usertype' => 'Admin',
+            'phone' => '01829493782',
+            'gender' => 'Male',
+            'address' => 'Noakhali,Bnagladesh',
             'email_verified_at' => now(),
             // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'password' => bcrypt('123456'), 

@@ -3,8 +3,6 @@
 <div class="content-wrapper">
     <div class="container-full">
       <!-- Content Header (Page header) -->
-    
-
       <!-- Main content -->
       <section class="content">
         <div class="row">
@@ -38,7 +36,7 @@
                               <td>{{$AllData->email}} </td>
                               <td>
                                 <a href="{{route('user.edit',$AllData->id)}} " class="btn btn-sm btn-info">Edit</a>
-                                <a href="{{route('user.delete',$AllData->id)}}" class="btn btn-sm btn-danger" confirm(Are You Sure) >Delete</a>
+                                <a href="{{route('user.delete',$AllData->id)}}" class="btn btn-sm btn-danger" id="delete" >Delete</a>
                                 </td>
                           </tr>
                           @endforeach
