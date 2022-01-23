@@ -87,9 +87,9 @@
 				     <div class="form-group">
                         <h5>User Adress <span class="text-danger">*</span></h5>
                         <div class="controls">
-                        <input type="text" name="Adress" value="{{$user->Adress}}"  class="form-control" >
+                        <input type="text" name="address" value="{{$user->address}}"  class="form-control" >
                         </div>
-                        @error('Adress')
+                        @error('address')
                             <div class="text-danger"> {{$message}} </div>
                         @enderror
                     </div>
@@ -105,7 +105,7 @@
                         @enderror
                     </div>
                     <div  class="form-group">
-                        <img id="ShowImage" src="{{ (!empty($user->image))? url('storage/profile-photos'.$user->iamge):url('backend/images/no_image.jpg') }}" style="width: 100px; height: 100px; border: 1px solid #00000;" alt="ShowImage">
+                        <img id="ShowImage" src="{{ (!empty($user->image))? url('backend/new/'.$user->image):url('backend/images/no_image.jpg') }}" style="width: 100px; height: 100px; border: 1px solid #00000;" alt="ShowImage">
                     </div>
                 </div>
             </div>

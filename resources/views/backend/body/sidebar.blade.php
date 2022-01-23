@@ -43,7 +43,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('Profile.view')}}"><i class="ti-more"></i>Your Profile</a></li>
-            <li><a href="mailbox_compose.html"><i class="ti-more"></i>Change Password</a></li>
+            <li><a href="{{route('Password.Store')}}"><i class="ti-more"></i>Change Password</a></li>
            
           </ul>
         </li>
