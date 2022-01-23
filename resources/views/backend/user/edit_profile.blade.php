@@ -12,7 +12,7 @@
 	    </div>
    <!-- /.box-header -->
    <div class="box-body">
-       <form action="#" method="post" >
+       <form action="{{route('profile.store')}} " method="post" enctype="multipart/form-data" >
 	   <div class="row">
        <div class="col-md-12">
 			 <div class="row">
@@ -68,9 +68,9 @@
 				     <div class="form-group">
                         <h5>User Mobile <span class="text-danger">*</span></h5>
                         <div class="controls">
-                        <input type="text" name="mobile" value="{{$user->phone}}"  class="form-control" >
+                        <input type="text" name="phone" value="{{$user->phone}}"  class="form-control" >
                         </div>
-                        @error('mobile')
+                        @error('phone')
                             <div class="text-danger"> {{$message}} </div>
                         @enderror
 					
@@ -92,10 +92,8 @@
                         @error('Adress')
                             <div class="text-danger"> {{$message}} </div>
                         @enderror
-					
-				    </div>
-                    
-				 </div>
+                    </div>
+                </div>
                  <div class="col-md-6">
 				     <div class="form-group">
                         <h5>User Image <span class="text-danger">*</span></h5>
@@ -105,34 +103,23 @@
                         @error('image')
                             <div class="text-danger"> {{$message}} </div>
                         @enderror
-					
-				    </div>
-                    <div id="ShowImage" class="form-group">
-                        <img src="{{ (!empty($user->image))? url('storage/profile-photos'.$user->iamge):url('backend/images/no_image.jpg') }}" style="width: 100px; height: 100px; border: 1px solid #00000;" alt="ShowImage">
                     </div>
-
+                    <div  class="form-group">
+                        <img id="ShowImage" src="{{ (!empty($user->image))? url('storage/profile-photos'.$user->iamge):url('backend/images/no_image.jpg') }}" style="width: 100px; height: 100px; border: 1px solid #00000;" alt="ShowImage">
+                    </div>
                 </div>
-                
             </div>
             <input type="submit" value="Update" class="btn btn-primary mb-2">
-			
-		 </div>
-        
-
-		 </form>
-		 
-	  
-	</div>
-	  
-	 <!-- /.row -->
+        </div>
+        </form>
+        </div>
+        <!-- /.row -->
    </div>
    <!-- /.box-body -->
  </div>
  <!-- /.box -->
-
 </section>
-		
-	</div>
+</div>
 </div>
 
 <script type="text/javascript">
