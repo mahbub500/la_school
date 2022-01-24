@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\Setup\StudentClassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::get('/', function () {
 });
 Route::get('/admin', function () {
     return view('backend.admin');
-});
+})->name('admin');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -49,5 +50,13 @@ Route::prefix('profile')->group(function(){
     Route::post('/store',[ProfileController::class,'ProfileStore'])->name('profile.store');
     Route::get('/Password/View',[ProfileController::class,'PasswordView'])->name('Password.Store');
     Route::post('/Password/Update',[ProfileController::class,'PasswordUpdate'])->name('password.update');
+    
+});
+
+// Setup Manage
+Route::prefix('setups')->group(function(){
+        
+    Route::get('/view',[StudentClassController::class,'StudentView'])->name('student.class.view');
+    
     
 });
