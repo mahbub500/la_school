@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\Setup\FeeAmmountController;
 use App\Http\Controllers\backend\Setup\StudentYearController;
 use App\Http\Controllers\backend\Setup\StudentClassController;
 use App\Http\Controllers\backend\Setup\StudentGroupController;
@@ -110,3 +111,10 @@ Route::prefix('student')->group(function(){
     Route::post('/FeeCategory/update/{id}',[StudentFeeCategoryController::class,'FeeCategoryUpdate'])->name('student.FeeCategory.update');
     Route::get('/FeeCategory/delete/{id}',[StudentFeeCategoryController::class,'FeeCategoryDelete'])->name('student.FeeCategory.delete');
 });
+// Student Fee Ammount
+
+Route::get('/fee/amount/view',[FeeAmmountController::class,'FeeAmmountView'])->name('fee.ammount.view');
+Route::get('/fee/amount/add',[FeeAmmountController::class,'FeeAmmountAdd'])->name('fee.amount.add');
+Route::post('/fee/amount/add',[FeeAmmountController::class,'FeeAmmountStore'])->name('fee.amount.store');
+    
+
