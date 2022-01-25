@@ -62,6 +62,9 @@ $route = Request::route()->getName();
           <ul class="treeview-menu">
             <li><a href="{{route('student.class.view')}}"><i class="ti-more"></i>Student Class</a></li>
             <li><a href="{{route('student.year.view')}}"><i class="ti-more"></i>Student Year</a></li>
+            <li><a href="{{route('student.group.view')}}"><i class="ti-more"></i>Student Group</a></li>
+            <li><a href="{{route('student.Shift.view')}}"><i class="ti-more"></i>Student Shift</a></li>
+            <li><a href="{{route('student.FeeCategory.view')}}"><i class="ti-more"></i>Student Fee Category</a></li>
            
            
           </ul>

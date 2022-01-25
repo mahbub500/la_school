@@ -10,9 +10,9 @@
                  <!-- /.box -->
         <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Student Year List</h3>
+                <h3 class="box-title">Student Fee Category List</h3>
                 {{-- <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> --}}
-                <a href="{{route('student.year.add')}}"  type="button" class="btn btn-rounded btn-sm btn-success mb-5">Add New Year</a>
+                <a href="{{route('student.FeeCategory.add')}}"  type="button" class="btn btn-rounded btn-sm btn-success mb-5">Add New Fee Category</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -29,10 +29,10 @@
                           @foreach ($AllDatas as $key => $AllData)
                           <tr>
                               <td>{{$key+1}} </td>
-                              <td>{{$AllData->year}} </td>
+                              <td>{{$AllData->FeeCategory}} </td>
                               <td>
-                                <a href="{{route('year.edit',$AllData->id)}} " class="btn btn-sm btn-info">Edit</a>
-                                <a href="{{route('year.delete',$AllData->id)}}" class="btn btn-sm btn-danger" id="delete" >Delete</a>
+                                <a href="{{route('student.FeeCategory.edit',$AllData->id)}} " class="btn btn-sm btn-info">Edit</a>
+                                <a href="{{route('student.FeeCategory.delete',$AllData->id)}}" class="btn btn-sm btn-danger" id="delete" >Delete</a>
                                 </td>
                           </tr>
                           @endforeach

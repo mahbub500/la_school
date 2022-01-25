@@ -28,10 +28,10 @@ class ProfileController extends Controller
         $validation = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|unique:users',
+            'phone' => 'required',
             'address' => 'required|min:6',
             'gender' => 'required',
-            'image' => 'required|mimes:jpg,bmp,png',
+            // 'image' => 'required|mimes:jpg,bmp,png',
         ]);
         $data = User::findOrFail(Auth::user()->id);
         $data->name = $request->name;
