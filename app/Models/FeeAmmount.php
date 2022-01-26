@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FeeAmmount extends Model
 {
-    use HasFactory;
+   public function fee_category(){
+       return $this->belongsTo(StudentFeeCategory::class,'fee_category_id','id');
+   }
 }

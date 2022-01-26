@@ -21,7 +21,7 @@
                       <thead>
                         <tr>
                               <th width="10%" >SL</th>
-                              <th>Fee Category</th>
+                              <th>Fee Ammount</th>
                               <th width="25%">Action</th>
                         </tr>
                       </thead>
@@ -29,10 +29,11 @@
                           @foreach ($AllFees as $key => $AllFee)
                           <tr>
                               <td>{{$key+1}} </td>
-                              <td>{{$AllFees->FeeCategory}} </td>
+                              {{-- <td>{{$AllFee->fee_category->FeeCategory}} </td> --}}
+                              <td>{{$AllFee['fee_category']['FeeCategory']}} </td>
                               <td>
-                                <a href="{{route('student.FeeCategory.edit',$AllFees->id)}} " class="btn btn-sm btn-info">Edit</a>
-                                <a href="{{route('student.FeeCategory.delete',$AllFees->id)}}" class="btn btn-sm btn-danger" id="delete" >Delete</a>
+                                <a href="{{route('fee.amount.edit',$AllFee->fee_category_id)}}" class="btn btn-sm btn-info">Edit</a>
+                                <a class="btn btn-sm btn-danger" id="delete" >Delete</a>
                                 </td>
                           </tr>
                           @endforeach

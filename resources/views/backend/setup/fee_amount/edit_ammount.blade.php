@@ -12,7 +12,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Add Fee Amount</h4>
+			  <h4 class="box-title">Edit Fee Amount</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -32,17 +32,18 @@
 	 <select name="fee_category_id"  class="form-control">
 		<option value="" selected="" disabled="">Select Fee Category</option>
 		@foreach($AllFeesCategorys as $AllFeesCategory)
-		<option value="{{ $AllFeesCategory->id }}">{{ $AllFeesCategory->FeeCategory }}</option>
+		<option value="{{ $AllFeesCategory->id }}" {{ ($editData['0']->fee_category_id == $AllFeesCategory->id)? "selected" : "" }} > {{ $AllFeesCategory->FeeCategory }}</option>
+		{{-- <option value="selected" > {{ $AllFeesCategory->FeeCategory }}</option> --}}
 		@endforeach	 
 		
 		</select>
 	 </div>
           </div> <!-- // end form group -->
 
-
-
+          {{-- Edit Data --}}
+        @foreach ($editData as $edit )
+        <div class="delete_whole_extra_item_add" id="delete_whole_extra_item_add">
         <div class="row">
-
      	<div class="col-md-5">
 
    <div class="form-group">
@@ -51,7 +52,7 @@
 	 <select name="class_id[]" class="form-control">
 		<option value="" selected="" disabled="">Select Fee Category</option>
 		@foreach($AllClasess as $AllClases)
-		<option  value="{{ $AllClases->id }}">{{ $AllClases->name }}</option>
+		<option  value="{{ $AllClases->id }}" {{ ($edit->class_id == $AllClases->id)? "selected" : "" }}  >{{ $AllClases->name }}</option>
 		@endforeach	
 		 
 		</select>
@@ -67,7 +68,7 @@
       <div class="form-group">
 		<h5>Amount <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="text" name="amount[]" class="form-control" >
+	 <input type="text" name="amount[]" value="{{$edit->amount}}" class="form-control" >
 	 	  </div>
 		   @error('amount')
 				<div class="text-danger">{{$message}}</div>
@@ -77,15 +78,18 @@
 </div><!-- End col-md-5 -->
 
      	<div class="col-md-2" style="padding-top: 25px;">
- <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span>    		
+ <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span>    
+ <span class="btn btn-danger removeeventmore"><i class="fa fa-minus-circle"></i> </span>   		
      	</div><!-- End col-md-5 -->
      	
      </div> <!-- end Row -->
+     </div> <!-- End Delete Evlent Div -->
+     @endforeach
 
  </div>	<!-- // End add_item -->
 							 
 		 	<div class="text-xs-right">
-  <input type="submit" class="btn btn-rounded btn-info mb-5" value="Submit">
+  <input type="submit" class="btn btn-rounded btn-info mb-5" value="Update">
 						</div>
 					</form>
 
