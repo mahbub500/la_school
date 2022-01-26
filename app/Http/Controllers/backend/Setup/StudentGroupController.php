@@ -59,7 +59,7 @@ class StudentGroupController extends Controller
         $data->delete();
         $notification = array(
             'message' => 'Group Deleted Successfully',
-            'alert-type'=> 'success'
+            'alert-type'=> 'info'
         );
         return redirect()->route('student.group.view')->with($notification);
 

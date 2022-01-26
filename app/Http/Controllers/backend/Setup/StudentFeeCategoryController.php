@@ -59,7 +59,7 @@ class StudentFeeCategoryController extends Controller
         $data->delete();
         $notification = array(
             'message' => 'Fee Category Deleted Successfully',
-            'alert-type'=> 'success'
+            'alert-type'=> 'info'
         );
         return redirect()->route('student.FeeCategory.view')->with($notification);
 

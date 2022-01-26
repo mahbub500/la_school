@@ -5,10 +5,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\ProfileController;
 use App\Http\Controllers\backend\Setup\FeeAmmountController;
+use App\Http\Controllers\backend\Setup\StudentExamController;
 use App\Http\Controllers\backend\Setup\StudentYearController;
 use App\Http\Controllers\backend\Setup\StudentClassController;
 use App\Http\Controllers\backend\Setup\StudentGroupController;
 use App\Http\Controllers\backend\Setup\StudentShiftController;
+use App\Http\Controllers\backend\Setup\StudentSubjectController;
 use App\Http\Controllers\backend\Setup\StudentFeeCategoryController;
 
 /*
@@ -103,21 +105,40 @@ Route::prefix('student')->group(function(){
 
 // Student FeeCategory
 
-Route::prefix('student')->group(function(){
-    Route::get('/FeeCategory',[StudentFeeCategoryController::class,'FeeCategoryView'])->name('student.FeeCategory.view');
-    Route::get('/FeeCategory/add',[StudentFeeCategoryController::class,'FeeCategoryAdd'])->name('student.FeeCategory.add');
-    Route::POST('/FeeCategory/store',[StudentFeeCategoryController::class,'FeeCategoryStore'])->name('student.FeeCategory.store');
-    Route::get('/FeeCategory/edit/{id}',[StudentFeeCategoryController::class,'FeeCategoryEdit'])->name('student.FeeCategory.edit');
-    Route::post('/FeeCategory/update/{id}',[StudentFeeCategoryController::class,'FeeCategoryUpdate'])->name('student.FeeCategory.update');
-    Route::get('/FeeCategory/delete/{id}',[StudentFeeCategoryController::class,'FeeCategoryDelete'])->name('student.FeeCategory.delete');
+Route::prefix('student/FeeCategory')->group(function(){
+    Route::get('',[StudentFeeCategoryController::class,'FeeCategoryView'])->name('student.FeeCategory.view');
+    Route::get('/add',[StudentFeeCategoryController::class,'FeeCategoryAdd'])->name('student.FeeCategory.add');
+    Route::POST('/store',[StudentFeeCategoryController::class,'FeeCategoryStore'])->name('student.FeeCategory.store');
+    Route::get('/edit/{id}',[StudentFeeCategoryController::class,'FeeCategoryEdit'])->name('student.FeeCategory.edit');
+    Route::post('/update/{id}',[StudentFeeCategoryController::class,'FeeCategoryUpdate'])->name('student.FeeCategory.update');
+    Route::get('/delete/{id}',[StudentFeeCategoryController::class,'FeeCategoryDelete'])->name('student.FeeCategory.delete');
 });
-// Student Fee Ammount
+// Student Fee Ammount Management 
 
-Route::get('/fee/amount/view',[FeeAmmountController::class,'FeeAmmountView'])->name('fee.ammount.view');
-Route::get('/fee/amount/add',[FeeAmmountController::class,'FeeAmmountAdd'])->name('fee.amount.add');
-Route::post('/fee/amount/store',[FeeAmmountController::class,'FeeAmmountStore'])->name('fee.amount.store');
-Route::get('/fee/amount/edit/{fee_category_id}',[FeeAmmountController::class,'FeeAmmounteEdit'])->name('fee.amount.edit');
-Route::post('/fee/amount/update/{fee_category_id}',[FeeAmmountController::class,'FeeAmmountUpdate'])->name('fee.amount.update');
-Route::get('/fee/amount/detail/{fee_category_id}',[FeeAmmountController::class,'FeeAmmountDetail'])->name('fee.amount.detail');
-    
+Route::prefix('fee/amount/')->group(function(){
+Route::get('view',[FeeAmmountController::class,'FeeAmmountView'])->name('fee.ammount.view');
+Route::get('add',[FeeAmmountController::class,'FeeAmmountAdd'])->name('fee.amount.add');
+Route::post('store',[FeeAmmountController::class,'FeeAmmountStore'])->name('fee.amount.store');
+Route::get('edit/{fee_category_id}',[FeeAmmountController::class,'FeeAmmounteEdit'])->name('fee.amount.edit');
+Route::post('update/{fee_category_id}',[FeeAmmountController::class,'FeeAmmountUpdate'])->name('fee.amount.update');
+Route::get('detail/{fee_category_id}',[FeeAmmountController::class,'FeeAmmountDetail'])->name('fee.amount.detail');
+});  
+// Student Exam Management 
+Route::prefix('student/Exam/')->group(function(){
+    Route::get('',[StudentExamController::class,'ExamView'])->name('student.Exam.view');
+    Route::get('add',[StudentExamController::class,'ExamAdd'])->name('student.Exam.add');
+    Route::POST('store',[StudentExamController::class,'ExamStore'])->name('student.Exam.store');
+    Route::get('edit/{id}',[StudentExamController::class,'ExamEdit'])->name('student.Exam.edit');
+    Route::post('update/{id}',[StudentExamController::class,'ExamUpdate'])->name('student.Exam.update');
+    Route::get('delete/{id}',[StudentExamController::class,'ExamDelete'])->name('student.Exam.delete');
+});
+
+Route::prefix('student/Subject/')->group(function(){
+    Route::get('',[StudentSubjectController::class,'SubjectView'])->name('student.Subject.view');
+    Route::get('/add',[StudentSubjectController::class,'SubjectAdd'])->name('student.Subject.add');
+    Route::POST('/store',[StudentSubjectController::class,'SubjectStore'])->name('student.Subject.store');
+    Route::get('/edit/{id}',[StudentSubjectController::class,'SubjectEdit'])->name('student.Subject.edit');
+    Route::post('/update/{id}',[StudentSubjectController::class,'SubjectUpdate'])->name('student.Subject.update');
+    Route::get('/delete/{id}',[StudentSubjectController::class,'SubjectDelete'])->name('student.Subject.delete');
+});
 

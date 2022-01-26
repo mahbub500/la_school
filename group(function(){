@@ -1,0 +1,43 @@
+
+   ErrorException 
+
+  file_put_contents(E:\new_laravel_xampp\htdocs\la_school\app/Http/Controllers/backend/Setup/Route::prefix('student')-.php): failed to open stream: No such file or directory
+
+  at E:\new_laravel_xampp\htdocs\la_school\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php:187
+    183▕      * @return int|bool
+    184▕      */
+    185▕     public function put($path, $contents, $lock = false)
+    186▕     {
+  ➜ 187▕         return file_put_contents($path, $contents, $lock ? LOCK_EX : 0);
+    188▕     }
+    189▕ 
+    190▕     /**
+    191▕      * Write the contents of a file, replacing it atomically if it already exists.
+
+  1   E:\new_laravel_xampp\htdocs\la_school\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php:187
+      file_put_contents("E:\new_laravel_xampp\htdocs\la_school\app/Http/Controllers/backend/Setup/Route::prefix('student')-.php", "<?php
+
+namespace App\Http\Controllers\backend\Setup;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class Route::prefix('student')- extends Controller
+{
+    //
+}
+")
+
+  2   E:\new_laravel_xampp\htdocs\la_school\vendor\laravel\framework\src\Illuminate\Console\GeneratorCommand.php:164
+      Illuminate\Filesystem\Filesystem::put("E:\new_laravel_xampp\htdocs\la_school\app/Http/Controllers/backend/Setup/Route::prefix('student')-.php", "<?php
+
+namespace App\Http\Controllers\backend\Setup;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class Route::prefix('student')- extends Controller
+{
+    //
+}
+")

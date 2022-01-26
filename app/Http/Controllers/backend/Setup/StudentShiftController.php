@@ -59,7 +59,7 @@ class StudentShiftController extends Controller
         $data->delete();
         $notification = array(
             'message' => 'Shift Deleted Successfully',
-            'alert-type'=> 'success'
+            'alert-type'=> 'info'
         );
         return redirect()->route('student.Shift.view')->with($notification);
 
