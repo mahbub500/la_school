@@ -28,9 +28,7 @@ class FeeAmmountController extends Controller
    }
 // Data Store
    public function FeeAmmountStore(Request $request){
-    // $validation = $request->validate([
-    //     'amount' => 'numeric',                        
-    // ]);
+   
     $countClass = count($request->class_id);
     if($countClass !=NULL){
         for($i=0; $i<$countClass; $i++){

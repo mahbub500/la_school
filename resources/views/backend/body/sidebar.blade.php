@@ -68,6 +68,8 @@ $route = Request::route()->getName();
             <li><a href="{{route('fee.ammount.view')}}"><i class="ti-more"></i>Fee Category Ammount</a></li>
             <li><a href="{{route('student.Exam.view')}}"><i class="ti-more"></i>Student Exam</a></li>
             <li><a href="{{route('student.Subject.view')}}"><i class="ti-more"></i>Student Subjcet</a></li>
+            <li><a href="{{route('Assign.Subject.view')}}"><i class="ti-more"></i>Assign Subjcet</a></li>
+            <li><a href="{{route('Designation.view')}}"><i class="ti-more"></i>Designation</a></li>
            
            
           </ul>
