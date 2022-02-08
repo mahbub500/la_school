@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2fab86e268f6cdd8f0dc6f9efbb0664",
+    "content-hash": "20e993d6338173b53e51e51247b42291",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2645,6 +2645,10 @@
                 "mpdf",
                 "pdf"
             ],
+            "support": {
+                "issues": "https://github.com/niklasravnsborg/laravel-pdf/issues",
+                "source": "https://github.com/niklasravnsborg/laravel-pdf/tree/v4.1.0"
+            },
             "time": "2021-06-08T11:07:13+00:00"
         },
         {
@@ -8296,5 +8300,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }
